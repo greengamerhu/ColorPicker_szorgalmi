@@ -3,6 +3,8 @@ package com.example.szorgalmi1;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
+import android.graphics.ColorSpace;
 import android.os.Bundle;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -18,6 +20,10 @@ public class MainActivity extends AppCompatActivity {
     private TextView greenText;
     private TextView blueText;
     private TextView finalout;
+    private int red;
+    private int green;
+    private int blue;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +32,50 @@ public class MainActivity extends AppCompatActivity {
         seekBar1.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-                redText.setText("" + i);
+                redText.setText("Red: " + i);
+                red = i;
+                finalout.setText("("+ red + ", " + green + ", "+ blue+")");
+                finalout.setBackgroundColor(Color.rgb(red, green, blue));
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+        seekBar2.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                greenText.setText("Green: " + i);
+                green = i;
+                finalout.setText("("+ red + ", " + green + ", "+ blue+")");
+                finalout.setBackgroundColor(Color.rgb(red, green, blue));
+
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+        seekBar3.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                blueText.setText("Blue: " + i);
+                blue = i;
+                finalout.setText("("+ red + ", " + green + ", "+ blue+")");
+                finalout.setBackgroundColor(Color.rgb(red, green, blue));
+
             }
 
             @Override
@@ -40,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
     }
     private void init(){
         seekBar1 = findViewById(R.id.seekbar1);
@@ -49,5 +99,8 @@ public class MainActivity extends AppCompatActivity {
         greenText = findViewById(R.id.greenText);
         blueText = findViewById(R.id.blueText);
         finalout = findViewById(R.id.finalOut);
+        red = 0;
+        green = 0;
+        blue = 0;
     }
 }
