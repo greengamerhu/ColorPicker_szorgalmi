@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <SeekBar
+        android:paddingTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/seekbar1"
+        android:max="255"
+        android:progress="0"
+
+
+        />
+    <SeekBar
+        android:paddingTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/seekbar2"
+        android:layout_below="@id/seekbar1"
+        android:max="255"
+        android:progress="0"
+
+
+        /><SeekBar
+        android:paddingTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/seekbar3"
+        android:layout_below="@id/seekbar2"
+        android:max="255"
+        android:progress="0"
+
+
+        />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/seekbar3"
+        android:id="@+id/redText"
+        android:text="Red: "
+        android:textSize="100px"
+
+
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/redText"
+        android:id="@+id/greenText"
+        android:text="Green: "
+        android:textSize="100px"
+
+
+        />    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/greenText"
+        android:id="@+id/blueText"
+        android:text="Blue: "
+        android:textSize="100px"
+
+
+        />
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/blueText"
+        android:id="@+id/finalOut"
+        android:text=""
+        android:textSize="150px"
+        android:layout_centerHorizontal="true"
+        android:width="500dp"
+
+       />
+
+
+</RelativeLayout>
